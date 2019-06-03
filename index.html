@@ -1,0 +1,107 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes, maximum-scale=5.0,minimum-scale=1.0, minimal-ui">
+<!--	<meta name="viewport" content="minimal-ui, width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">-->
+<!--	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />-->
+	<meta name="HandheldFriendly" content="true" />
+    <title>Hotspot Captions A</title>
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="assets/css/swiper.min.css" />
+    <script type="text/javascript" src="assets/js/lib/jquery-1.9.1.min.js"></script>
+<!--    <script type="text/javascript" src="assets/js/data.js"></script>-->
+    <script type="text/javascript" src="assets/js/lib/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="assets/js/script.js"></script>
+<!--    <script type="text/javascript" src="assets/js/lib/swiper.js"></script>-->
+</head>
+<body>
+	<main>
+	<a href='#begin_btn' style='position:absolute;top:-5000px'>123</a>
+	<div role='navigation' style='display:none'></div>
+	<div id='reverse_extra_tab' role='none'></div>
+	<div class='dummy_div' role='none'></div>
+	<div id='whole_container' >
+		<div class="preload">
+            <div class="loader"></div>
+        </div> 
+		<div id='begin_page'>
+			<div id='begin_dummy' role='none'></div>
+			<div class='image_container_all'>
+				<img id='begin_container' role='img' src='assets/images/static.png' alt='Sustainable development: three essential factors'>
+			</div>
+			<div role='button' id='begin_btn' aria-label='Begin'>Begin</div>
+			<div id='begin_reverse_dummy' role='none'></div>
+		</div>
+		<div id='dummy_1' role='none'>???</div>
+		<h1 id='text_container' role='none'></h1>
+		
+		<div id='responsive_container'>
+			<div id='heading_text' role='none' aria-label='Sustainable development: three essential factors'>Sustainable development: three essential factors</div>
+			<div class='image_container_all'>
+				<img id='image_container' role='img' src='assets/images/blank.png' alt='Sustainable development: three essential factors'>
+				<div id='hotspot_page_1'>
+					 <div class='hotspot_dummy' id='hotspot_dummy_1' aria-label='@'>@</div> 
+					<div role='button'  class='hotspot' id='toggle_1' aria-label='Hotspot 1 of 3'><span style='color:transparent;width:0px;height:0px;display:none'>hotspot</span></div>
+					<div class='label_class' id='label_1'>
+						 <div class='dummy_popup' role='none' aria-label='@' aria-hidden='true'>@</div> 
+						<div class='label_heading' role='none' id='label_head_1' aria-label='Environmentally sound decisions'>Environmentally sound decisions</div>
+						<div class='label_content' role='none' id='label_cont_1' aria-label='Sustainable development minimizes environmental harm and ensures that natural resources will be available to future generations.'>Sustainable development minimizes environmental harm and ensures that natural resources will be available to future generations.</div>
+						<div role='button' class='close_button' id='closebtn_1' aria-label='close'></div>
+					</div>
+				</div>
+				
+				<div id='hotspot_page_2'>
+					 <div class='hotspot_dummy' id='hotspot_dummy_2' aria-label='@'>@</div> 
+					<div role='button'  class='hotspot' id='toggle_2' aria-label='Hotspot 2 of 3'><span style='color:transparent;width:0px;height:0px;display:none'>hotspot</span></div>
+					<div class='label_class' id='label_2'>
+						 <div class='dummy_popup' role='none' aria-label='@'>@</div> 
+						<div class='label_heading' role='none' id='label_head_2' aria-label='Socially equitable decisions'>Socially equitable decisions</div>
+						<div class='label_content' role='none' id='label_cont_2' aria-label='Sustainable development reflects societal needs and ensure costs and benefits are distributed fairly among all people, present and future.'>Sustainable development reflects societal needs and ensure costs and benefits are distributed fairly among all people, present and future.</div>
+						<div role='button' class='close_button' id='closebtn_2' aria-label='close'></div>
+					</div>
+				</div>
+				
+				<div id='hotspot_page_3'>
+					 <div class='hotspot_dummy' id='hotspot_dummy_3' aria-label='@'>@</div> 
+					<div role='button'  class='hotspot' id='toggle_3' aria-label='Hotspot 3 of 3'><span style='color:transparent;width:0px;height:0px;display:none'>hotspot</span></div>
+					<div class='label_class' id='label_3'>	
+						 <div class='dummy_popup' role='none' aria-label='@'>@</div> 
+						<div class='label_heading' role='none' id='label_head_3' aria-label='Economically viable decisions'>Economically viable decisions</div>
+						<div class='label_content' role='none' id='label_cont_3' aria-label='Sustainable development considers all costs, including long-term environmental and societal costs, and ensures economic well-being for all.'>Sustainable development considers all costs, including long-term environmental and societal costs, and ensures economic well-being for all.</div>
+						<div role='button' class='close_button' id='closebtn_3'  aria-label='close'></div>
+					</div>
+				</div>
+				<div role="button" id="reset_btn" aria-label="Reset">Reset</div>
+			</div>
+		</div>
+		<div id='dummy_2' role='none'>???</div>
+	</div>
+	<div id='extra_tab'></div>
+</main>	
+<script>
+		$.holdReady(true);
+		var preloadComplete=false;
+		$.getScript("./assets/js/lib/preloadjs-0.6.2.min.js", function() {
+			$.holdReady(false);
+			manifest = [
+				"assets/images/common/loading.gif",
+				"assets/images/common/close_btn.png",
+				"assets/images/blank.png",
+				"assets/images/static.png",
+			];
+			preload = new createjs.LoadQueue(true);
+			preload.addEventListener("progress", function() {
+				//console.log('Updating preloading progress...'+Math.round(preload.progress*100)+"%");
+			});
+			preload.addEventListener("complete", function(){
+				$('.preload').fadeOut();
+			});
+			preload.setMaxConnections(5);
+			preload.loadManifest(manifest);
+		});
+</script>
+<script type="text/javascript" src="assets/js/lib/preloadjs-0.6.2.min.js"></script>
+<script type="text/javascript" src="assets/js/lib/fitToScreen.js"></script>
+</body>
+</html>
