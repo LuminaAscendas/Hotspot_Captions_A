@@ -18,7 +18,7 @@ $(document).ready(function(){
 			$('#begin_page').hide()	
 			//$('#text_container,#responsive_container').show();
 //			setTimeout(function(){
-				$('#text_container,#responsive_container,#restart').fadeIn(500);resizeApp();
+				$('#text_container,#responsive_container,#heading_text,#restart').fadeIn(500);resizeApp();
 				
 //			},500);
 			resizeApp();
