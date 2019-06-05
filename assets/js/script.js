@@ -17,10 +17,10 @@ $(document).ready(function(){
 		//setTimeout(function(){
 			$('#begin_page').hide()	
 			//$('#text_container,#responsive_container').show();
-			setTimeout(function(){
+//			setTimeout(function(){
 				$('#text_container,#responsive_container,#restart').fadeIn(500);resizeApp();
 				
-			},1000);
+//			},500);
 			resizeApp();
 			set_tab();
 			$('#reset_btn').off('click').on('click',pageReload);
@@ -56,7 +56,7 @@ $(document).ready(function(){
 //			$('#toggle_3').removeAttr('role');
 			$('.dummy_popup').attr('aria-hidden','false')
 //			$('#'+e.target.id).hide();
-			$('#heading_text').css('visibility','hidden');
+//			$('#heading_text').css('visibility','hidden');
 //			$('.label_class').hide();
 			$('#label_'+curr_id).show();
 			if (/MSIE 10/i.test(navigator.userAgent) || /MSIE 9/i.test(navigator.userAgent) || /rv:11.0/i.test(navigator.userAgent) ||/Edge\/\d./i.test(navigator.userAgent)) {
