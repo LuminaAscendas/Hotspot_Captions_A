@@ -33,6 +33,7 @@ html, body {
 }
 body {
   font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-family: SourceSansPro-Regular;
   font-size: 14px;
   color:#000;
   margin: 10px 0px 0px 5px;
@@ -446,8 +447,8 @@ clicked {
 #heading_text{
 	color: #007098;
 	font-family: 'SourceSansPro-Bold';
-	font-size:15px;
-	text-align:center;
+	font-size:14px;
+	//text-align:center;
 }
 .swiper-slide {
 	font-size: 18px;
