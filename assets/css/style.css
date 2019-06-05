@@ -97,7 +97,7 @@ body {
 #dir_span{
 	 color: #007098;
 	 font-family: "SourceSansPro-Bold";
-	font-weight: bold;
+	font-weight: normal;
 	font-size: 14px;
 }
 .dummy_popup{
@@ -179,10 +179,11 @@ clicked {
 	width:100%;
 /*	padding: 5px;*/
     font-size: 14px;
-	font-family: "SourceSansPro-Regular";
+	//font-family: "SourceSansPro-Regular";
 	position: relative;
 	display:none;
 	top:2px;
+	font-weight:normal;
 }
 #textcont_1{
 	display:block;
@@ -458,9 +459,10 @@ clicked {
 	width:100%;
 /*	min-height:77px; */
 /*	opacity:0;*/
-	font-family: "SourceSansPro-Bold";
+	//font-family: "SourceSansPro-Bold";
 	font-size:14px;
 	display:none;
+	font-weight:normal;
 }
 #reset_btn{
     position: absolute;
