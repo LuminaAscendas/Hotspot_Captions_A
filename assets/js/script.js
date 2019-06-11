@@ -48,7 +48,9 @@ $(document).ready(function(){
 			$('.hotspot_dummy').hide();
 			$('.label_class').hide();
 			$('.hotspot').show();
+//			$('.label_class').focus();
 			$('#toggle_'+curr_id).hide();
+		
 			
 //			$('#hotspot_dummy_'+curr_id).show();
 //			set_tab();
@@ -58,7 +60,8 @@ $(document).ready(function(){
 //			$('#'+e.target.id).hide();
 //			$('#heading_text').css('visibility','hidden');
 //			$('.label_class').hide();
-			$('#label_'+curr_id).show();
+			$('#label_'+curr_id).show()
+			
 			if (/MSIE 10/i.test(navigator.userAgent) || /MSIE 9/i.test(navigator.userAgent) || /rv:11.0/i.test(navigator.userAgent) ||/Edge\/\d./i.test(navigator.userAgent)) {
 				setTimeout(function(){
 					$('.label_class').attr('tabindex','0').focus().css('outline','0px solid');
@@ -73,6 +76,15 @@ $(document).ready(function(){
 		if( /Android|webOS|iPhone|iPad|iPod|Opera Mini/i.test(navigator.userAgent) ) {
 			$('.label_heading ').focus();
 		}
+		
+			setTimeout(function(){		
+			   $('.label_class').attr('tabindex','0').addClass('tab_index');
+			   $('#label_'+curr_id).focus().attr('role','application');	
+//				alert();
+			},100);
+//			setTimeout(function(){		
+//			   $('#label_'+curr_id).attr('role','none');				
+//			},1500)
 	});
 	$('.close_button').off('click').on('click',function(e){
 		var curr_id=e.target.id.split('_')[1];
@@ -90,7 +102,7 @@ $(document).ready(function(){
 			$('#heading_text').css('visibility','visible');	
 		
 		$('#toggle_3').attr('aria-label','clickable hotspot')
-		$('#toggle_3').attr('aria-label','hotspot 3 of 3')//.focus();
+		$('#toggle_3').attr('aria-label','hotspot 3 of 3. Press enter or space to enable popup')//.focus();
 //			alert();
 		//},10)
 		if (/MSIE 10/i.test(navigator.userAgent) || /MSIE 9/i.test(navigator.userAgent) || /rv:11.0/i.test(navigator.userAgent) ||/Edge\/\d./i.test(navigator.userAgent)) {
@@ -124,6 +136,7 @@ $(document).ready(function(){
 	
 	
 	$('.label_content').on('focus',function(){
+		
 		$('#text_container').removeAttr('role');
 			$('.label_class').removeAttr('tabindex')//.focus();
 		//$('.label_heading').removeAttr('role');
@@ -171,15 +184,17 @@ $(document).ready(function(){
 		$('#hotspot_dummy_3').on('focus',function(){
 			setTimeout(function(){
 				$('#toggle_3').focus().attr('role','button')
-				$('#toggle_3').focus().attr('aria-label','hotspot 3 of 3')
+				$('#toggle_3').focus().attr('aria-label','hotspot 3 of 3. Press enter or space to enable popup')
 				$('.hotspot_dummy,.dummy_popup').attr('aria-hidden','true')
 			},5)
 		})
 	
 	$('.label_heading').on('focus',function(){
+		 $('.label_class').attr('role','text');
 		setTimeout(function(){
+		 	$('.label_class').attr('role','none');
 			//$('.label_heading').removeAttr('role');
-		},1000)
+		},300);
 //		$('.label_heading').removeAttr('role');
 //		$('.label_heading').removeAttr('role');
 		//setTimeout(function(){
@@ -229,7 +244,8 @@ function set_tab(){
 		$('#begin_dummy,#begin_reverse_dummy').addClass('tab_index');
 	}else{
 		$('.tab_index').removeClass('tab_index').removeAttr('tabindex');
-		$('#text_container').addClass('tab_index');
+		$('#text_container,.label_class').addClass('tab_index');
+		$('#image_container').addClass('tab_index');
 		$('#heading_text').addClass('tab_index');
 		$('.hotspot').addClass('tab_index');
 		$('.label_heading').addClass('tab_index');
